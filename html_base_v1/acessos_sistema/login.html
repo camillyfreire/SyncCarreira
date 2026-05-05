@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#4a4455",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdcc5",
+                        "surface-dim": "#e2d8d2",
+                        "surface-variant": "#eae1da",
+                        "tertiary-container": "#a05100",
+                        "surface-tint": "#732ee4",
+                        "primary": "#630ed4",
+                        "on-secondary-container": "#007165",
+                        "surface": "#fff8f5",
+                        "background": "#fff8f5",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#7c3aed",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#301400",
+                        "on-tertiary-container": "#ffdfcb",
+                        "secondary-container": "#62fae3",
+                        "secondary": "#006b5f",
+                        "on-primary-container": "#ede0ff",
+                        "inverse-surface": "#342f2b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "tertiary": "#7c3d00",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-background": "#1f1b17",
+                        "outline": "#7b7487",
+                        "surface-container": "#f6ece6",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#eaddff",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-secondary-fixed": "#00201c",
+                        "on-primary-fixed": "#25005a",
+                        "secondary-fixed": "#62fae3",
+                        "on-surface": "#1f1b17",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#ccc3d8",
+                        "inverse-on-surface": "#f9efe8",
+                        "surface-container-highest": "#eae1da",
+                        "surface-container-low": "#fcf2eb",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005047",
+                        "inverse-primary": "#d2bbff",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-container-high": "#f0e6e0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "xs": "4px",
+                        "lg": "32px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "container-margin": "20px",
+                        "md": "20px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tactile-button {
+            box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+        }
+        .tactile-button:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+        .soft-card-shadow {
+            box-shadow: 0 4px 20px rgba(99, 14, 212, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-[#FAF9F6] text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#FAF9F6] dark:bg-slate-950 text-violet-600 dark:text-violet-400 font-plus-jakarta-sans antialiased fixed top-0 w-full z-50 border-b border-[#E6E4E0] dark:border-slate-800">
+<div class="flex justify-between items-center h-16 px-5 w-full max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 cursor-pointer active:opacity-70">
+                SyncCarreira
+            </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-violet-600 transition-colors">help_outline</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-container-margin py-xl pt-32">
+<div class="w-full max-w-[440px]">
+<!-- Login Card -->
+<div class="bg-white rounded-xl p-lg soft-card-shadow border border-[#E6E4E0]">
+<!-- Brand Identity -->
+<div class="text-center mb-lg">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-fixed mb-md">
+<span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-xs">Bem-vindo de volta</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Acesse sua jornada profissional personalizada.</p>
+</div>
+<!-- Form -->
+<form class="space-y-md">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs" for="email">EMAIL</label>
+<input class="w-full bg-[#FAF9F6] border-transparent focus:border-primary focus:ring-0 rounded-lg p-md text-body-lg font-body-lg transition-all outline-none border-2" id="email" placeholder="seu@email.com" type="email"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs" for="password">SENHA</label>
+<input class="w-full bg-[#FAF9F6] border-transparent focus:border-primary focus:ring-0 rounded-lg p-md text-body-lg font-body-lg transition-all outline-none border-2" id="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary-container" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Lembrar de mim</span>
+</label>
+<a class="font-body-md text-body-md text-primary font-semibold hover:underline" href="#">Esqueceu a senha?</a>
+</div>
+<button class="w-full h-[56px] bg-primary text-on-primary font-title-sm text-title-sm rounded-lg tactile-button flex items-center justify-center transition-all" type="submit">
+                        Entrar
+                    </button>
+</form>
+<!-- Divider -->
+<div class="relative my-lg">
+<div class="absolute inset-0 flex items-center">
+<span class="w-full border-t border-outline-variant"></span>
+</div>
+<div class="relative flex justify-center text-label-caps">
+<span class="bg-white px-md text-on-surface-variant">OU ACESSE COM</span>
+</div>
+</div>
+<!-- Social Login -->
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-2 h-12 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors cursor-pointer active:opacity-70">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDni5vcBkL_2OPukRiux3huWXa00hfKG6KXyMEkY5Vj_yqi3aSG9OM6lSVZ5NS947fl-C37Txi9RuWbu9labzR6Fj1mpncjfeaad0VtikkAszjPv58SckEXUH6KVM_CPsg8SP8EaZexeO_cq6O5U6Uo8qfANonIddYorTFVw2rXnuBTbIUEDY0-AL9iRMiQqZr_AWua0ia5I3RksQguQChS-K5QSlH-5ty7v1jTMtTmENIEX-zahkR5QnbnKC1iZF3G4B0G7AShklk"/>
+<span class="font-body-md font-semibold">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors cursor-pointer active:opacity-70">
+<svg class="w-5 h-5 text-[#0077b5]" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+<span class="font-body-md font-semibold">LinkedIn</span>
+</button>
+</div>
+<!-- Create Account Link -->
+<div class="mt-lg text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Não tem uma conta? 
+                        <a class="text-primary font-bold hover:underline" href="#">Criar conta</a>
+</p>
+</div>
+</div>
+<!-- Trust Badge / Aesthetic Image -->
+<div class="mt-lg rounded-xl overflow-hidden relative h-32 border border-[#E6E4E0] hidden md:block">
+<img class="w-full h-full object-cover opacity-60" data-alt="A candid, high-quality photograph of diverse university students collaborating in a bright, modern library lounge. The setting is filled with natural sunlight and soft shadows, reflecting a professional and academic atmosphere. The overall palette features warm grays, crisp whites, and subtle violet accents in the background decor, maintaining a clean and minimalist aesthetic that communicates growth and career momentum." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA56oBzxlTXkFC3chE5YBXK5LR4FMvzNBr_5wes3FpHT89mcGidKeLGZ7r5a7x5r0pVnyJSJNuE8UFixBqV8QLohQmxezP8NEQGlIMIGWVQsD8_6NBtay-wNOZCauQRwfK85KKUM9BCf-4CAvK4o5Pc7xLmMcL8h162pXbM6eNwyU0X8s-ANqrgrdFPYSQ43R_Ur26QMWD7wDxjjzb5d68gM0bj9OfKeNM6PCFrPH2IUdzCo6ytDTutj9mEeIfiCnzjyF0WiyohPdk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-0 right-0 text-center">
+<span class="text-label-caps text-on-surface-variant">JUNTE-SE A +10.000 ESTUDANTES</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#FAF9F6] dark:bg-slate-950 w-full py-8 border-t border-[#E6E4E0] dark:border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-5 max-w-7xl mx-auto gap-4">
+<div class="text-sm font-plus-jakarta-sans text-slate-500">
+                © 2024 Pathfinder Career Systems. All rights reserved.
+            </div>
+<div class="flex gap-lg">
+<a class="text-sm font-plus-jakarta-sans text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition-opacity duration-150" href="#">Privacy Policy</a>
+<a class="text-sm font-plus-jakarta-sans text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition-opacity duration-150" href="#">Terms of Service</a>
+<a class="text-sm font-plus-jakarta-sans text-slate-500 hover:text-slate-900 dark:hover:text-slate-200 transition-opacity duration-150" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF9F6;
+        }
+        .font-plus-jakarta {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fff8f5",
+                        "on-background": "#1f1b17",
+                        "secondary": "#006b5f",
+                        "secondary-fixed": "#62fae3",
+                        "primary-fixed": "#eaddff",
+                        "tertiary-fixed": "#ffdcc5",
+                        "on-secondary-container": "#007165",
+                        "error": "#ba1a1a",
+                        "surface": "#fff8f5",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#fcf2eb",
+                        "surface-container": "#f6ece6",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "inverse-primary": "#d2bbff",
+                        "surface-dim": "#e2d8d2",
+                        "on-secondary-fixed-variant": "#005047",
+                        "on-secondary-fixed": "#00201c",
+                        "primary": "#630ed4",
+                        "on-surface": "#1f1b17",
+                        "inverse-on-surface": "#f9efe8",
+                        "primary-container": "#7c3aed",
+                        "background": "#fff8f5",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-primary-fixed": "#25005a",
+                        "outline": "#7b7487",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#732ee4",
+                        "tertiary-container": "#a05100",
+                        "tertiary": "#7c3d00",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-surface-variant": "#4a4455",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-container-high": "#f0e6e0",
+                        "surface-variant": "#eae1da",
+                        "outline-variant": "#ccc3d8",
+                        "inverse-surface": "#342f2b",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#62fae3",
+                        "on-tertiary-fixed": "#301400",
+                        "on-primary-container": "#ede0ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffdfcb",
+                        "surface-container-highest": "#eae1da",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "base": "8px",
+                        "lg": "32px",
+                        "xs": "4px",
+                        "xl": "48px",
+                        "sm": "12px",
+                        "md": "20px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "title-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-[#FAF9F6] text-on-surface">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 hidden md:flex flex-col border-r border-[#E6E4E0] bg-[#FAF9F6] flex flex-col p-6 gap-2 sticky top-0">
+<div class="text-2xl font-black text-violet-700 mb-8 font-plus-jakarta">PsiSync</div>
+<nav class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-transform hover:translate-x-1 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-plus-jakarta text-base">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-violet-50 text-violet-700 border-r-4 border-violet-600 font-bold rounded-xl transition-transform hover:translate-x-1 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-plus-jakarta text-base">Calendário</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-transform hover:translate-x-1 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="accessibility_new">accessibility_new</span>
+<span class="font-plus-jakarta text-base">Pacientes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-transform hover:translate-x-1 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="font-plus-jakarta text-base">Relatórios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-transform hover:translate-x-1 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-plus-jakarta text-base">Configurações</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-[#E6E4E0]">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Foto de perfil da psicóloga" class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="A professional and friendly portrait of a female psychologist in her late 30s. She has a warm smile and is wearing a smart-casual blazer. The background is a soft-focus clinical office with books and a warm lamp, creating an atmosphere of trust and calm professionalism. The lighting is soft and natural, emphasizing her approachable and expert demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1324tbYHDAepYBa0C5LRvM5NxBuzmw8Ss4XVQ4_SCsAmoP8f83iBNsnKnRhwHZYU00eSVAHn7aX876UL2CCwVKvS-lA96dNNrittTXFBbjyWPLv-PYdhTH-wkNFwjdjTjzmZs-RQHobdb4DLLBaZ-ksgeHlqssxQsJaABT1_gXI-ud2CJhsxDskv1khA5GoLog7PpSzdJuaWUeG7-aOzPdwyZS5kddP7gCLwUqZfKtlByNzWUyvwcxzZ6seISst3CktykMtMIbZw"/>
+<div>
+<p class="font-bold text-sm text-on-surface">Dra. Mariana Silva</p>
+<p class="text-xs text-slate-500">Psicóloga Clínica</p>
+</div>
+</div>
+<button class="w-full bg-violet-600 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                    Novo Agendamento
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm md:sticky md:top-0">
+<div class="flex justify-between items-center px-6 py-3 max-w-[1600px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="md:hidden text-xl font-bold text-violet-700">PsiSync</span>
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-50 border-none rounded-full w-64 text-sm focus:ring-2 focus:ring-violet-200 transition-all" placeholder="Buscar pacientes ou turmas..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-violet-50 px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-violet-600 text-lg mr-2" data-icon="notifications">notifications</span>
+<span class="w-2 h-2 bg-violet-600 rounded-full animate-pulse"></span>
+</div>
+<button class="material-symbols-outlined p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors" data-icon="settings">settings</button>
+<img alt="Avatar Profissional" class="w-8 h-8 rounded-full border-2 border-violet-100" data-alt="Close up professional avatar of a therapist with a confident and kind expression, shot in a high-key bright studio setting. The image uses a clean, modern aesthetic with a soft neutral background to ensure the focus remains on the professional subject. Lighting is bright but gentle, perfect for a high-end medical or wellness interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8KJVJu4izQ0qGmbnc15uRY7UzFDoP2Y3L45D7i2hqdEi334Gx0-m5jPswKXIAdc6ueVxMmDQ7lKZgj5o87kcJtOoWkyr1-UV7EWjkaQkD2_MBwhQmkLg05LmOa9W1SRor0burzOWMMFnQRh4yzNw0mpI-E6I4k4oWA1gHGH8kMAkRx0FIxXNuWFrw39htqYq1sQL1gOf4r5PzDoDT_5jqJBWRhnPsjuadi4XW4JTBj1jTqPcoqmy1k4pNt2BYdYYweQvU2sTUCdQ"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="p-6 md:p-8 pt-20 md:pt-8 flex flex-col gap-8 max-w-[1600px] mx-auto w-full">
+<!-- Feedback Message -->
+<div class="bg-violet-50 border-l-4 border-violet-500 p-4 rounded-r-xl flex items-center gap-4 shadow-sm">
+<span class="material-symbols-outlined text-violet-600" data-icon="info" data-weight="fill" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-sm font-medium text-violet-700">As notificações de lembrete são enviadas automaticamente aos alunos 24h antes do horário agendado.</p>
+</div>
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-plus-jakarta text-3xl font-extrabold text-on-surface tracking-tight">Gestão de Agendamentos</h1>
+<p class="text-slate-500 mt-1">Visualize e organize seus horários semanais e mensais.</p>
+</div>
+<div class="flex gap-3">
+<div class="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold text-slate-600">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+                            Junho, 2024
+                        </div>
+<button class="bg-violet-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-violet-700 transition-colors shadow-lg active:scale-95">
+                            Novo Agendamento
+                        </button>
+</div>
+</div>
+<!-- Layout Grid: Calendar + Sidebar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Calendar Section -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Filters -->
+<div class="flex flex-wrap gap-4 items-center bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+<span class="text-sm font-bold text-slate-400 uppercase tracking-widest mr-2">Filtros</span>
+<select class="bg-slate-50 border-none rounded-lg text-sm font-medium text-slate-700 py-2 pl-3 pr-8 focus:ring-violet-200">
+<option>Todas as Turmas</option>
+<option>Alpha</option>
+<option>Beta</option>
+<option>Delta</option>
+</select>
+<select class="bg-slate-50 border-none rounded-lg text-sm font-medium text-slate-700 py-2 pl-3 pr-8 focus:ring-violet-200">
+<option>Tipo de Sessão</option>
+<option>Sessão Individual</option>
+<option>Sessão em Grupo</option>
+</select>
+<div class="ml-auto flex gap-1 bg-slate-100 p-1 rounded-lg">
+<button class="px-3 py-1 text-xs font-bold rounded-md bg-white text-violet-600 shadow-sm">Mês</button>
+<button class="px-3 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700">Semana</button>
+<button class="px-3 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700">Dia</button>
+</div>
+</div>
+<!-- Main Calendar Card -->
+<div class="bg-white rounded-[2rem] p-6 shadow-sm border border-slate-100">
+<div class="grid grid-cols-7 gap-2 mb-4">
+<div class="text-center py-2 text-xs font-bold text-slate-400 uppercase tracking-tighter">Dom</div>
+<div class="text-center py-2 text-xs font-bold text-slate-400 uppercase tracking-tighter">Seg</div>
+<div class="text-center py-2 text-xs font-bold text-slate-400 uppercase tracking-tighter">Ter</div>
+<div class="text-center py-2 text-xs font-bold text-slate-400 uppercase tracking-tighter">Qua</div>
+<div class="text-center py-2 text-xs font-bold text-slate-400 uppercase tracking-tighter">Qui</div>
+<div class="text-center py-2 text-xs font-bold text-slate-400 uppercase tracking-tighter">Sex</div>
+<div class="text-center py-2 text-xs font-bold text-slate-400 uppercase tracking-tighter">Sáb</div>
+</div>
+<!-- Calendar Grid -->
+<div class="grid grid-cols-7 grid-rows-5 gap-2 min-h-[500px]">
+<!-- Row 1 -->
+<div class="border border-slate-50 rounded-xl p-2 text-slate-300 opacity-50">28</div>
+<div class="border border-slate-50 rounded-xl p-2 text-slate-300 opacity-50">29</div>
+<div class="border border-slate-50 rounded-xl p-2 text-slate-300 opacity-50">30</div>
+<div class="border border-slate-50 rounded-xl p-2 text-slate-300 opacity-50">31</div>
+<div class="bg-slate-50/50 border border-slate-100 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">01</span>
+</div>
+<div class="bg-slate-50/50 border border-slate-100 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">02</span>
+</div>
+<div class="bg-slate-50/50 border border-slate-100 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">03</span>
+</div>
+<!-- Row 2 -->
+<div class="bg-slate-50/50 border border-slate-100 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">04</span>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2 flex flex-col gap-1 overflow-hidden">
+<span class="text-xs font-bold text-slate-600">05</span>
+<div class="bg-violet-100 text-violet-700 p-1.5 rounded-lg text-[10px] font-bold border-l-4 border-violet-600 leading-tight">
+                                        Individual: Carlos
+                                    </div>
+<div class="bg-teal-100 text-teal-700 p-1.5 rounded-lg text-[10px] font-bold border-l-4 border-teal-600 leading-tight">
+                                        Grupo: Alpha
+                                    </div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">06</span>
+<div class="bg-violet-100 text-violet-700 p-1.5 rounded-lg text-[10px] font-bold border-l-4 border-violet-600 mt-1 leading-tight">
+                                        Individual: Ana
+                                    </div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">07</span>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">08</span>
+<div class="bg-teal-100 text-teal-700 p-1.5 rounded-lg text-[10px] font-bold border-l-4 border-teal-600 mt-1 leading-tight">
+                                        Grupo: Beta
+                                    </div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">09</span>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">10</span>
+</div>
+<!-- Row 3 (Today Highlight) -->
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">11</span>
+</div>
+<div class="bg-white border-2 border-violet-400 rounded-xl p-2 ring-4 ring-violet-50">
+<span class="text-xs font-bold text-violet-600">12 (Hoje)</span>
+<div class="bg-teal-100 text-teal-700 p-1.5 rounded-lg text-[10px] font-bold border-l-4 border-teal-600 mt-1 leading-tight">
+                                        Grupo: Delta
+                                    </div>
+<div class="bg-violet-100 text-violet-700 p-1.5 rounded-lg text-[10px] font-bold border-l-4 border-violet-600 mt-1 leading-tight">
+                                        Indiv: Paulo
+                                    </div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">13</span>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">14</span>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">15</span>
+<div class="bg-teal-100 text-teal-700 p-1.5 rounded-lg text-[10px] font-bold border-l-4 border-teal-600 mt-1 leading-tight">
+                                        Grupo: Alpha
+                                    </div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">16</span>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl p-2">
+<span class="text-xs font-bold text-slate-600">17</span>
+</div>
+<!-- Fill rest of grid -->
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">18</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">19</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">20</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">21</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">22</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">23</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">24</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">25</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">26</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">27</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">28</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">29</span></div>
+<div class="bg-white border border-slate-200 rounded-xl p-2"><span class="text-xs font-bold text-slate-600">30</span></div>
+<div class="border border-slate-50 rounded-xl p-2 text-slate-300 opacity-50">01</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Agenda de Hoje -->
+<aside class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-white rounded-[2rem] p-6 shadow-md border border-slate-100 flex-grow">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-plus-jakarta text-xl font-bold text-on-surface">Agenda de Hoje</h2>
+<span class="bg-violet-100 text-violet-700 px-3 py-1 rounded-full text-xs font-bold">4 Sessões</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Agenda Item -->
+<div class="group flex gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-violet-50 transition-colors border border-transparent hover:border-violet-100">
+<div class="flex flex-col items-center justify-center min-w-[60px] border-r border-slate-200 group-hover:border-violet-200">
+<span class="text-sm font-bold text-on-surface">08:30</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Manhã</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<p class="font-bold text-sm text-on-surface">Turma Delta</p>
+<span class="text-[10px] bg-teal-100 text-teal-700 px-2 py-0.5 rounded font-bold uppercase">Grupo</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">Sessão Coletiva: Mindfulness</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-[14px] text-green-500" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-slate-400">Confirmado</span>
+</div>
+</div>
+</div>
+<!-- Agenda Item -->
+<div class="group flex gap-4 p-4 rounded-2xl bg-white border border-slate-100 hover:border-violet-200 hover:bg-violet-50 transition-colors">
+<div class="flex flex-col items-center justify-center min-w-[60px] border-r border-slate-200 group-hover:border-violet-200">
+<span class="text-sm font-bold text-on-surface">10:00</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Manhã</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<p class="font-bold text-sm text-on-surface">Paulo Almeida</p>
+<span class="text-[10px] bg-violet-100 text-violet-700 px-2 py-0.5 rounded font-bold uppercase">Indiv</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">Sessão Semanal #4</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-[14px] text-orange-400" data-icon="schedule" data-weight="fill" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<span class="text-[10px] font-bold text-slate-400">Pendente Notificação</span>
+</div>
+</div>
+</div>
+<!-- Agenda Item -->
+<div class="group flex gap-4 p-4 rounded-2xl bg-white border border-slate-100 hover:border-violet-200 hover:bg-violet-50 transition-colors">
+<div class="flex flex-col items-center justify-center min-w-[60px] border-r border-slate-200 group-hover:border-violet-200">
+<span class="text-sm font-bold text-on-surface">14:15</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Tarde</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<p class="font-bold text-sm text-on-surface">Ana Clara P.</p>
+<span class="text-[10px] bg-violet-100 text-violet-700 px-2 py-0.5 rounded font-bold uppercase">Indiv</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">Sessão Emergencial</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-[14px] text-green-500" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-slate-400">Confirmado</span>
+</div>
+</div>
+</div>
+<!-- Agenda Item -->
+<div class="group flex gap-4 p-4 rounded-2xl bg-white border border-slate-100 hover:border-violet-200 hover:bg-violet-50 transition-colors">
+<div class="flex flex-col items-center justify-center min-w-[60px] border-r border-slate-200 group-hover:border-violet-200">
+<span class="text-sm font-bold text-on-surface">16:45</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Tarde</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<p class="font-bold text-sm text-on-surface">Turma Alpha</p>
+<span class="text-[10px] bg-teal-100 text-teal-700 px-2 py-0.5 rounded font-bold uppercase">Grupo</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">Encontro Terapêutico</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-[14px] text-green-500" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-slate-400">Confirmado</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border-2 border-dashed border-slate-200 rounded-2xl text-slate-400 text-xs font-bold hover:border-violet-300 hover:text-violet-500 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                                Encaixe de Horário
+                            </button>
+</div>
+<!-- Stats Card -->
+<div class="bg-violet-600 rounded-[2rem] p-6 text-white shadow-xl relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-plus-jakarta text-lg font-bold mb-1">Próxima Semana</h3>
+<p class="text-violet-100 text-xs mb-4">Seu tempo está 85% ocupado.</p>
+<div class="h-2 w-full bg-violet-800 rounded-full mb-6">
+<div class="h-full w-[85%] bg-white rounded-full"></div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-violet-600" data-alt="Close up face of a smiling young woman student, light mode medical application aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnBWA0WCGBakCV7j25cTrFoS9KIJLhdVecYnbEqbYQxDqVjtTXAXEAkijjkd0DDEVv1O4IN5Z4EY4oicZuHlIlg6U13f6Iwj7Mwd96FfA3QqbXRCy_m0w2Ati24ETBbCDI7eDBiFa5iDMzIKaT7XSM8lNEkQZh1a2O2_T0wisvgXU3a95kwQZc9A7Uq_rktkX4vFPoPB5tBA83tWJHtPus5QtAZCO2o89BuJyLG0Nc8wFcpF279bdnN0-c4aaA0q76Z0OPLYRfvOc"/>
+<img class="w-8 h-8 rounded-full border-2 border-violet-600" data-alt="Close up face of a professional male student, corporate wellness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg9THePEp-po1sLnt1_rid2ustBnrEZBL5ddjD6kZiel0Dkn2qBTBJkHQwKY_-4Ey50qKoY_ksHu3ZA9Y473yv9CK6fVp6HrfKtZMLyDlnbiFf2o7rOPuhnUVFIzTNJ-r3KRtLwA2RczOWfuKjdvoQSbNGZZu4YYWRDNR3WpJK6FKAPz-mHxoeSyC5lOKRMB5xgIGlP_GKV2Bg_tl-YGdeFrPTHh42pvDWfN_N27weykieMAoD3zB_NNOpqGgXUKZ_zfcMbKedgCk"/>
+<img class="w-8 h-8 rounded-full border-2 border-violet-600" data-alt="Portrait of a diverse young professional, bright lighting, high quality stock photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpemTqoSQbVTgrLpoGcbKBfCJ40GJBcZLO6EwiG_NnVnarCLMkacezhyfoghXeFyEIhFMBtCPt2b8GQP6zZOzp72DJDxXynR8ZmiKcA2u-6tuXmygXDWCNmdi9tRJD8iO-ZL8ZvgsnsF9fo1kn7oyU9kVBSrhpLdTxn5hoNHVjlLnZmsw7pduFOGvP39PFWf2qJd2G7ErvHDzCbB3m5GirCkKBI-6z8Ylf8MGZk2ZhNcFUE2kpCiTMJ13euqHEXohcy74GyvZtMWw"/>
+<div class="w-8 h-8 rounded-full border-2 border-violet-600 bg-violet-400 flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+<span class="text-xs font-bold bg-violet-500 px-2 py-1 rounded-lg">Ver Detalhes</span>
+</div>
+</div>
+<!-- Decorative Circle -->
+<div class="absolute -right-10 -bottom-10 w-32 h-32 bg-violet-500 rounded-full opacity-20"></div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar for Mobile -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-white/90 backdrop-blur-lg border-t border-slate-100 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] rounded-t-3xl md:hidden z-50">
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="text-[10px] font-bold uppercase tracking-wider mt-1">Agenda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[10px] font-bold uppercase tracking-wider mt-1">Pacientes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-violet-600 bg-violet-50 rounded-2xl px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span class="text-[10px] font-bold uppercase tracking-wider mt-1">Turmas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-bold uppercase tracking-wider mt-1">Perfil</span>
+</a>
+</nav>
+</body></html>

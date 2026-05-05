@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configurações - Portal da Psicóloga</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#005047",
+                        "surface-container-low": "#fcf2eb",
+                        "primary-fixed": "#eaddff",
+                        "surface-dim": "#e2d8d2",
+                        "on-tertiary-fixed": "#301400",
+                        "primary-fixed-dim": "#d2bbff",
+                        "background": "#fff8f5",
+                        "tertiary": "#7c3d00",
+                        "error-container": "#ffdad6",
+                        "primary": "#630ed4",
+                        "surface": "#fff8f5",
+                        "secondary": "#006b5f",
+                        "primary-container": "#7c3aed",
+                        "inverse-surface": "#342f2b",
+                        "surface-container-highest": "#eae1da",
+                        "surface-variant": "#eae1da",
+                        "surface-container-high": "#f0e6e0",
+                        "secondary-fixed": "#62fae3",
+                        "surface-container": "#f6ece6",
+                        "surface-bright": "#fff8f5",
+                        "outline": "#7b7487",
+                        "on-surface": "#1f1b17",
+                        "secondary-container": "#62fae3",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1f1b17",
+                        "outline-variant": "#ccc3d8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#a05100",
+                        "surface-tint": "#732ee4",
+                        "on-primary-container": "#ede0ff",
+                        "on-secondary-container": "#007165",
+                        "inverse-primary": "#d2bbff",
+                        "on-tertiary-container": "#ffdfcb",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#4a4455",
+                        "on-primary-fixed": "#25005a",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "tertiary-fixed": "#ffdcc5",
+                        "inverse-on-surface": "#f9efe8",
+                        "on-secondary-fixed": "#00201c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "12px",
+                        "md": "20px",
+                        "lg": "32px",
+                        "container-margin": "20px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "xl": "48px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #FAF9F6;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px rgba(99, 14, 212, 0.05);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background bg-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#FAF9F6]/80 backdrop-blur-md border-b border-[#E6E4E0] flex justify-between items-center px-5 h-16 shadow-sm font-['Plus_Jakarta_Sans'] antialiased">
+<div class="text-xl font-bold text-violet-600">Portal da Psicóloga</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-neutral-500 hover:text-violet-500 transition-colors active:scale-95 duration-200">account_circle</button>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-[calc(100vh-64px)] w-64 hidden md:flex flex-col border-r border-[#E6E4E0] bg-white sticky top-16 py-6 font-['Plus_Jakarta_Sans'] text-sm font-medium">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-[#E6E4E0]">
+<img alt="Foto de perfil da psicóloga" class="w-full h-full object-cover" data-alt="A professional studio portrait of a psychologist with a friendly and welcoming expression. She has neatly styled hair and is wearing a professional violet blazer. The background is a clean, bright minimalist office with soft focus. The lighting is soft and natural, creating a warm, approachable, and highly professional aesthetic consistent with a modern healthcare portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASXLi_jwlPcrunM5qWZTODXJDXMHOMi3CR94vsfbNV00VBKU4tUutcTJOmSW8VISUSJOFD2eU_8pb3w1nP56XfLsVYj6vj54BtHAOohSAvHHmnFYd4QL5prQTAirjVz3YyiTKcoHvBN5etTPGdnomw5dUMouZtfkypNoUATnKJf9zNXtuRsC0hajJX8OvaD_HjcUy2M1Ti-CrBgNGctTiEIC-JzsSSj1Ye3Vq0bHZ6058kAupUYORHE49XLSSOF9yObTMAyAo9PFE"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Dra. Nome</p>
+<p class="text-xs text-neutral-500">Configurações da Conta</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<!-- Perfil (Active) -->
+<a class="flex items-center gap-3 px-6 py-3 bg-violet-50 text-violet-700 border-r-4 border-violet-600 transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span>Perfil</span>
+</a>
+<!-- Outras Tabs -->
+<a class="flex items-center gap-3 px-6 py-3 text-neutral-600 hover:bg-neutral-50 transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span>Notificações</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-neutral-600 hover:bg-neutral-50 transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">security</span>
+<span>Segurança</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-neutral-600 hover:bg-neutral-50 transition-all active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Preferências</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-md lg:p-lg max-w-4xl mx-auto pb-32 md:pb-lg">
+<div class="mb-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-base">Configurações da Conta</h1>
+<p class="text-body-md text-on-surface-variant">Gerencie suas informações profissionais e preferências do portal.</p>
+</div>
+<!-- Bento Layout Sections -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Profile Image Card -->
+<section class="md:col-span-1 bg-white p-md rounded-xl border border-[#E6E4E0] shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col items-center text-center">
+<div class="relative group cursor-pointer">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+<img alt="Foto de Perfil" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional woman in a serene office environment. The lighting is soft and golden, highlighting a calm and confident expression. She is dressed in modern professional attire with subtle violet accents. The background features blurred green plants and a minimalist bookshelf, evoking a sense of tranquility and expertise in a modern mental health setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfqFhSKM8URCl5gV_IvlpVBCHMaaysZ_MEWHsfVkQKdcSd_EDesOku98cfZoXifhso5-Pu0zjTBu6-65-Z5KwuGMOsjgj9oQdikO3hQfVc7nZyaAh1ZEurm6BGFcReNCOXt8lcLA_pRKqZYbuohxEIY7jFXSjbXMy4xFxvsnWQ9uh6aKHvndePlgxmAzXJSH9IALuwI8hYuI_s5X26dbKpsds-vP4gCBQy5WA1an3k9vdph4vqj_KdwLfAINmn6NOF5_DN11hPZsg"/>
+</div>
+<div class="absolute inset-0 bg-violet-600/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+</div>
+<button class="mt-md text-primary font-title-sm text-sm hover:underline">Alterar imagem</button>
+<p class="text-xs text-neutral-400 mt-2">JPG, PNG ou GIF. Máximo de 1MB.</p>
+</section>
+<!-- Personal Information Form -->
+<section class="md:col-span-2 bg-white p-md rounded-xl border border-[#E6E4E0] shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<h2 class="font-title-sm text-title-sm text-on-surface mb-md">Informações Pessoais</h2>
+<form class="space-y-sm">
+<div class="grid grid-cols-1 gap-sm">
+<label class="block">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">Nome Completo</span>
+<input class="w-full bg-neutral-50 border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:bg-white transition-all text-body-md" type="text" value="Dra. Nome da Psicóloga"/>
+</label>
+<label class="block">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">E-mail Profissional</span>
+<input class="w-full bg-neutral-50 border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:bg-white transition-all text-body-md" type="email" value="contato@drapsicologa.com"/>
+</label>
+<label class="block">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">CRP (Conselho Regional de Psicologia)</span>
+<input class="w-full bg-neutral-50 border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:bg-white transition-all text-body-md" type="text" value="06/123456"/>
+</label>
+<label class="block">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">Bio</span>
+<textarea class="w-full bg-neutral-50 border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:bg-white transition-all text-body-md" rows="3">Especialista em Terapia Cognitivo-Comportamental com foco em ansiedade e desenvolvimento de carreira.</textarea>
+</label>
+</div>
+</form>
+</section>
+<!-- Security Section -->
+<section class="md:col-span-1 bg-white p-md rounded-xl border border-[#E6E4E0] shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-sm text-primary">
+<span class="material-symbols-outlined">security</span>
+<h2 class="font-title-sm text-title-sm text-on-surface">Segurança</h2>
+</div>
+<p class="text-sm text-on-surface-variant mb-md">Proteja sua conta alterando sua senha regularmente.</p>
+</div>
+<button class="w-full py-3 bg-neutral-100 hover:bg-neutral-200 text-on-surface font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 text-sm border-b-2 border-neutral-300 active:translate-y-[2px] active:border-b-0">
+<span class="material-symbols-outlined text-sm">lock_reset</span>
+                        Alterar Senha
+                    </button>
+</section>
+<!-- Notification Preferences -->
+<section class="md:col-span-2 bg-white p-md rounded-xl border border-[#E6E4E0] shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<h2 class="font-title-sm text-title-sm text-on-surface mb-md">Preferências de Notificação</h2>
+<div class="space-y-md">
+<div class="flex items-center justify-between p-sm hover:bg-neutral-50 rounded-lg transition-colors">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-violet-500">event_available</span>
+<div>
+<p class="font-semibold text-on-surface text-sm">Alertas de Novos Agendamentos</p>
+<p class="text-xs text-on-surface-variant">Receba uma notificação instantânea quando um aluno agendar uma sessão.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-neutral-50 rounded-lg transition-colors">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-violet-500">summarize</span>
+<div>
+<p class="font-semibold text-on-surface text-sm">Resumos Semanais de Turmas</p>
+<p class="text-xs text-on-surface-variant">Relatório consolidado sobre o progresso e engajamento das turmas.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Action Bar -->
+<div class="mt-lg flex justify-end gap-md">
+<button class="px-lg py-3 text-on-surface-variant font-semibold hover:text-on-surface transition-colors">Cancelar</button>
+<button class="px-xl py-3 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all border-b-2 border-violet-900">Salvar Alterações</button>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 h-20 pb-safe bg-white/90 backdrop-blur-lg border-t border-[#E6E4E0] shadow-[0_-4px_20px_rgba(0,0,0,0.05)] md:hidden z-50 rounded-t-2xl">
+<!-- Active: Perfil -->
+<a class="flex flex-col items-center justify-center text-violet-600 bg-violet-50 rounded-xl px-3 py-1 scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider">Perfil</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 active:bg-neutral-100" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider">Notificações</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 active:bg-neutral-100" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider">Segurança</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-400 active:bg-neutral-100" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-wider">Preferências</span>
+</a>
+</nav>
+</body></html>

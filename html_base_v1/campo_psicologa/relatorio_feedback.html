@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#eae1da",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#62fae3",
+                    "tertiary-fixed": "#ffdcc5",
+                    "on-surface-variant": "#4a4455",
+                    "surface-bright": "#fff8f5",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#342f2b",
+                    "primary-fixed": "#eaddff",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "secondary": "#006b5f",
+                    "on-primary": "#ffffff",
+                    "background": "#fff8f5",
+                    "on-primary-container": "#ede0ff",
+                    "surface-tint": "#732ee4",
+                    "inverse-primary": "#d2bbff",
+                    "surface-variant": "#eae1da",
+                    "primary-container": "#7c3aed",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#7c3d00",
+                    "surface-container": "#f6ece6",
+                    "on-surface": "#1f1b17",
+                    "on-tertiary-container": "#ffdfcb",
+                    "surface": "#fff8f5",
+                    "tertiary-fixed-dim": "#ffb783",
+                    "on-secondary-fixed": "#00201c",
+                    "surface-container-high": "#f0e6e0",
+                    "tertiary-container": "#a05100",
+                    "on-primary-fixed": "#25005a",
+                    "primary-fixed-dim": "#d2bbff",
+                    "on-secondary-fixed-variant": "#005047",
+                    "surface-container-low": "#fcf2eb",
+                    "outline-variant": "#ccc3d8",
+                    "secondary-container": "#62fae3",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "on-background": "#1f1b17",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f9efe8",
+                    "secondary-fixed-dim": "#3cddc7",
+                    "on-tertiary-fixed": "#301400",
+                    "primary": "#630ed4",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#7b7487",
+                    "surface-dim": "#e2d8d2",
+                    "on-secondary-container": "#007165"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "lg": "32px",
+                    "gutter": "16px",
+                    "container-margin": "20px",
+                    "md": "20px",
+                    "xs": "4px",
+                    "xl": "48px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "plus-jakarta-sans": ["Plus Jakarta Sans", "sans-serif"],
+                    "title-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fff8f5; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E6E4E0;
+            box-shadow: 0 4px 20px rgba(99, 14, 212, 0.05);
+        }
+        .radar-grid {
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-[#E6E4E0] bg-white dark:bg-slate-900 z-50 flex flex-col py-6">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-[#7C3AED] leading-none">Psychology Portal</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Practitioner View</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-plus-jakarta-sans text-sm font-semibold">Dashboard</span>
+</a>
+<a class="bg-[#7C3AED]/5 text-[#7C3AED] border-r-4 border-[#7C3AED] px-4 py-3 flex items-center gap-3 rounded-l-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-plus-jakarta-sans text-sm font-semibold">Student Roster</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-plus-jakarta-sans text-sm font-semibold">Analytics</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+<span class="font-plus-jakarta-sans text-sm font-semibold">Feedback Queue</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-plus-jakarta-sans text-sm font-semibold">Resources</span>
+</a>
+</nav>
+<div class="px-4 mb-6">
+<button class="w-full py-4 bg-primary text-white font-plus-jakarta-sans font-bold text-sm rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Assessment
+            </button>
+</div>
+<div class="px-4 border-t border-[#E6E4E0] pt-6 space-y-1">
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-plus-jakarta-sans text-sm font-semibold">Help Center</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-plus-jakarta-sans text-sm font-semibold">Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-40 bg-[#FAF9F6]/80 backdrop-blur-md border-b border-[#E6E4E0] flex justify-between items-center px-6 h-16 ml-64 overflow-hidden" style="width: calc(100% - 16rem);">
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="absolute inset-y-0 left-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="Search students..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-600 hover:bg-[#7C3AED]/10 p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-slate-600 hover:bg-[#7C3AED]/10 p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-[#E6E4E0]"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="font-plus-jakarta-sans text-sm font-bold text-on-surface">Dr. Sarah Connor</p>
+<p class="text-[10px] text-slate-500 font-semibold uppercase tracking-tighter">Clinical Lead</p>
+</div>
+<img alt="Psychologist profile photo" class="w-10 h-10 rounded-full border-2 border-primary-fixed shadow-sm" data-alt="A professional headshot of a female clinical psychologist in a bright, modern office setting. She has a warm, approachable smile and is wearing a soft cream-colored blazer. The background is softly blurred with hints of bookshelves and green plants, maintaining a clean, minimalist, high-end medical aesthetic. The lighting is natural and diffuse, emphasizing a calm and professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsuZHQFJzo7V3QMth0Wsj3Op3vZxE8MqNo-wb-L46Ist7cxuDq9cCYlHbsKahtMzeXO2I_INjQG7NPMo2yRV07bgBbMKSnjU5mzP5gRnxa--GGjlPf_jJNufTmNYBF4d6CFGjnax16vwltuhRAiAndrHX2GFHrkvIpM8gQ-xlXw04lf29tftiBu4zRBoXQlLL0wpErUE_B1OkDoXcEHAUXqn0FDEj_UU0Qnh1KZZsIuDjU1c-QOljGYAIxnzEB1SSElaHFCH4f0fY"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<main class="ml-64 mt-16 p-8 min-h-screen">
+<!-- Student Profile Header -->
+<section class="mb-8">
+<div class="glass-card rounded-2xl p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div class="flex items-center gap-5">
+<div class="relative">
+<img alt="Ricardo Almeida" class="w-20 h-20 rounded-2xl object-cover shadow-md" data-alt="A portrait of a young adult male student with a thoughtful and focused expression. He is wearing a casual navy blue shirt, standing against a neutral warm gray background. The photo has a professional, clean, and modern look with soft studio lighting that creates gentle shadows, reflecting a person in a process of career discovery and growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6n5nBSefL2L74SLReGfYeB57gzDI1wiYln9kKlw9XaPNBGg2XEDn4gdB0YYOttd-Xl-Eei-xNNRtafbFqQx0rDoUakkEmEOZqHxdDvdbqEa0WaR-Se5Wqj_L1LYW0X9fPSjSzrU736-DRpa8IjoRgFR-0q7MLb6hW3flPAovWhTlhjSYW5Rpk8ykxbnndODs0YxVT293aPw7n671yaeZLhkOuJph0lSY_V0YZRUM39mRuIe1mGi-ldRSQjatNWSM1Ih6FwBDcKU8"/>
+<div class="absolute -bottom-2 -right-2 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-md shadow-sm">ACTIVE</div>
+</div>
+<div>
+<h1 class="font-display-lg text-on-surface leading-none mb-1">Ricardo Almeida</h1>
+<p class="font-plus-jakarta-sans text-slate-500 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">school</span>
+                            Engenharia A • 4º Semestre
+                        </p>
+</div>
+</div>
+<div class="flex items-center gap-8 bg-surface-container-low px-6 py-4 rounded-xl">
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Career Readiness</p>
+<div class="flex items-center gap-2">
+<div class="w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+<div class="bg-primary w-[72%] h-full"></div>
+</div>
+<span class="text-sm font-bold text-primary">72%</span>
+</div>
+</div>
+<div class="w-[1px] h-10 bg-slate-200"></div>
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Trails Completed</p>
+<p class="text-lg font-bold text-on-surface">5 <span class="text-slate-300 text-sm">/ 8</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Analytics Section: Radar Chart -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-6">
+<div class="glass-card rounded-2xl p-6 h-full flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-title-sm text-on-surface">Skill Alignment Profile</h3>
+<span class="material-symbols-outlined text-slate-400">info</span>
+</div>
+<div class="flex-1 flex items-center justify-center relative py-4">
+<!-- Simulated Radar Chart -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Background Web -->
+<div class="absolute inset-0 border-[1px] border-slate-200 rounded-full"></div>
+<div class="absolute inset-4 border-[1px] border-slate-200 rounded-full"></div>
+<div class="absolute inset-12 border-[1px] border-slate-100 rounded-full"></div>
+<div class="absolute inset-20 border-[1px] border-slate-50 rounded-full"></div>
+<!-- Spokes -->
+<div class="absolute w-full h-[1px] bg-slate-100 rotate-0"></div>
+<div class="absolute w-full h-[1px] bg-slate-100 rotate-72"></div>
+<div class="absolute w-full h-[1px] bg-slate-100 rotate-144"></div>
+<div class="absolute w-full h-[1px] bg-slate-100 rotate-216"></div>
+<div class="absolute w-full h-[1px] bg-slate-100 rotate-288"></div>
+<!-- Data Polygon -->
+<svg class="absolute w-full h-full drop-shadow-lg" viewbox="0 0 100 100">
+<polygon fill="rgba(124, 58, 237, 0.2)" points="50,15 85,40 75,85 25,85 15,40" stroke="#7C3AED" stroke-width="2"></polygon>
+<circle cx="50" cy="15" fill="#7C3AED" r="3"></circle>
+<circle cx="85" cy="40" fill="#7C3AED" r="3"></circle>
+<circle cx="75" cy="85" fill="#7C3AED" r="3"></circle>
+<circle cx="25" cy="85" fill="#7C3AED" r="3"></circle>
+<circle cx="15" cy="40" fill="#7C3AED" r="3"></circle>
+</svg>
+</div>
+<!-- Labels -->
+<div class="absolute top-0 font-label-caps text-slate-600">Technical</div>
+<div class="absolute top-1/4 -right-2 font-label-caps text-slate-600">Leadership</div>
+<div class="absolute bottom-2 right-4 font-label-caps text-slate-600">Creativity</div>
+<div class="absolute bottom-2 left-4 font-label-caps text-slate-600">Communication</div>
+<div class="absolute top-1/4 -left-2 font-label-caps text-slate-600">Teamwork</div>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container/20 text-secondary font-label-caps rounded-full">High Leadership</span>
+<span class="px-3 py-1 bg-tertiary-container/20 text-tertiary font-label-caps rounded-full">Emerging Technical</span>
+</div>
+</div>
+</div>
+<!-- Trail Responses History -->
+<div class="col-span-12 lg:col-span-7">
+<div class="glass-card rounded-2xl flex flex-col h-full overflow-hidden">
+<div class="p-6 border-b border-[#E6E4E0] flex justify-between items-center">
+<h3 class="font-title-sm text-on-surface">Trail Responses History</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-primary-fixed text-primary font-label-caps rounded-md">View All</button>
+<button class="px-3 py-1 text-slate-400 font-label-caps">Flagged Only</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-0">
+<!-- Responses List -->
+<div class="divide-y divide-slate-100">
+<!-- Trail Item 1 -->
+<div class="p-6 hover:bg-slate-50/50 transition-colors">
+<div class="flex justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-peach-100 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-sm">person_search</span>
+</div>
+<div>
+<p class="font-bold text-sm text-on-surface">Self-knowledge</p>
+<p class="text-[10px] text-slate-400">Completed 2 days ago</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-error-container text-error text-[10px] font-bold rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">flag</span>
+                                        Indecision
+                                    </span>
+</div>
+<p class="text-sm text-slate-600 leading-relaxed italic">"I feel overwhelmed when looking at market choices. I'm not sure if Engineering is what I really want or if it's just what my family expects..."</p>
+</div>
+<!-- Trail Item 2 -->
+<div class="p-6 hover:bg-slate-50/50 transition-colors">
+<div class="flex justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-mint-100 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm">groups</span>
+</div>
+<div>
+<p class="font-bold text-sm text-on-surface">External Influences</p>
+<p class="text-[10px] text-slate-400">Completed 1 week ago</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                                        Aligned
+                                    </span>
+</div>
+<p class="text-sm text-slate-600 leading-relaxed italic">"Networking events have shown me that the practical day-to-day of a project manager is quite interesting to me."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Editor Section -->
+<div class="col-span-12">
+<div class="glass-card rounded-2xl p-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-[#7C3AED]/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<div>
+<h3 class="font-title-sm text-on-surface">Psychological Feedback &amp; Guidance</h3>
+<p class="text-sm text-slate-500">Provide personalized insights based on Ricardo's recent trail responses.</p>
+</div>
+</div>
+<div class="mb-8 border border-[#E6E4E0] rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="bg-surface-container-low px-4 py-2 border-b border-[#E6E4E0] flex gap-4">
+<button class="text-slate-500 hover:text-primary"><span class="material-symbols-outlined text-xl">format_bold</span></button>
+<button class="text-slate-500 hover:text-primary"><span class="material-symbols-outlined text-xl">format_italic</span></button>
+<button class="text-slate-500 hover:text-primary"><span class="material-symbols-outlined text-xl">format_list_bulleted</span></button>
+<button class="text-slate-500 hover:text-primary"><span class="material-symbols-outlined text-xl">link</span></button>
+<div class="flex-1"></div>
+<span class="text-[10px] text-slate-400 font-bold self-center uppercase tracking-widest">Rich Text Editor</span>
+</div>
+<textarea class="w-full p-6 border-none focus:ring-0 text-on-surface leading-relaxed placeholder:text-slate-300" placeholder="Dear Ricardo, after analyzing your self-knowledge trail, I noticed some tension regarding career expectations..." rows="8"></textarea>
+</div>
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-6 py-3 bg-white border border-[#E6E4E0] text-slate-600 font-plus-jakarta-sans font-bold text-sm rounded-xl hover:bg-slate-50 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+                                Export PDF
+                            </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-white border border-[#E6E4E0] text-slate-600 font-plus-jakarta-sans font-bold text-sm rounded-xl hover:bg-slate-50 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">table_chart</span>
+                                Excel
+                            </button>
+</div>
+<div class="flex gap-4 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-8 py-3 text-slate-500 font-plus-jakarta-sans font-bold text-sm hover:text-primary transition-colors">
+                                Save Draft
+                            </button>
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-10 py-4 bg-primary text-white font-plus-jakarta-sans font-bold text-sm rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">send</span>
+                                Send Feedback to Student
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer spacing -->
+<div class="h-12"></div>
+</main>
+</body></html>

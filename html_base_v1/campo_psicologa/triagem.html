@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Painel de Triagem - SyncCarreira</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#732ee4",
+                        "surface-container-high": "#f0e6e0",
+                        "primary": "#630ed4",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdcc5",
+                        "primary-container": "#7c3aed",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "surface-container-highest": "#eae1da",
+                        "on-surface-variant": "#4a4455",
+                        "on-secondary-fixed-variant": "#005047",
+                        "secondary-container": "#62fae3",
+                        "on-tertiary-container": "#ffdfcb",
+                        "on-surface": "#1f1b17",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#006b5f",
+                        "surface-dim": "#e2d8d2",
+                        "inverse-primary": "#d2bbff",
+                        "secondary-fixed": "#62fae3",
+                        "inverse-surface": "#342f2b",
+                        "on-secondary-fixed": "#00201c",
+                        "surface-container-low": "#fcf2eb",
+                        "surface": "#fff8f5",
+                        "tertiary-container": "#a05100",
+                        "on-background": "#1f1b17",
+                        "outline-variant": "#ccc3d8",
+                        "outline": "#7b7487",
+                        "on-primary-container": "#ede0ff",
+                        "on-primary-fixed": "#25005a",
+                        "background": "#fff8f5",
+                        "surface-container": "#f6ece6",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#7c3d00",
+                        "surface-bright": "#fff8f5",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "inverse-on-surface": "#f9efe8",
+                        "on-secondary-container": "#007165",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "surface-variant": "#eae1da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "container-margin": "20px",
+                        "xs": "4px",
+                        "lg": "32px",
+                        "xl": "48px",
+                        "gutter": "16px",
+                        "md": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "title-sm": ["Plus Jakarta Sans"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-border {
+            border-right-width: 4px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(230, 228, 224, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- SideNavBar (Execution from JSON) -->
+<nav class="fixed left-0 top-0 h-full flex flex-col h-screen w-64 border-r border-slate-200 bg-slate-50 z-50">
+<div class="p-lg">
+<h1 class="text-xl font-bold text-violet-600 font-headline-md">SyncCarreira</h1>
+<p class="text-xs text-slate-500 font-body-md">Módulo Profissional</p>
+</div>
+<div class="flex-1 px-sm space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-violet-600 transition-colors font-plus-jakarta text-sm font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-violet-50 text-violet-700 border-r-4 border-violet-600 rounded-r-lg font-plus-jakarta text-sm font-medium" href="#">
+<span class="material-symbols-outlined">assignment_ind</span>
+                Triagem
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-violet-600 transition-colors font-plus-jakarta text-sm font-medium" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                Trilhas
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-violet-600 transition-colors font-plus-jakarta text-sm font-medium" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                Agendamentos
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-violet-600 transition-colors font-plus-jakarta text-sm font-medium" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Relatórios
+            </a>
+</div>
+<div class="p-md">
+<button class="w-full bg-primary text-on-primary py-sm rounded-xl font-headline-md font-semibold shadow-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                Nova Triagem
+            </button>
+</div>
+<div class="px-sm py-md border-t border-slate-200">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-100 transition-colors font-plus-jakarta text-sm font-medium" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Configurações
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 hover:bg-slate-100 transition-colors font-plus-jakarta text-sm font-medium" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Sair
+            </a>
+</div>
+</nav>
+<!-- TopNavBar (Execution from JSON) -->
+<header class="flex justify-between items-center h-16 px-8 ml-64 w-[calc(100%-16rem)] fixed top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-40">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-title-sm text-on-surface">Painel de Triagem</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="relative hidden lg:block">
+<span class="absolute inset-y-0 left-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-body-md focus:ring-2 focus:ring-primary-container w-64" placeholder="Buscar aluno..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-slate-500 hover:text-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-500 hover:text-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-px bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Dra. Mariana Silva</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider">Psicóloga Organizacional</p>
+</div>
+<img alt="Avatar da Profissional" class="h-10 w-10 rounded-full border-2 border-primary-container object-cover" data-alt="A professional portrait of a smiling Brazilian psychologist in a bright, modern office setting. She has warm features and is wearing a stylish charcoal blazer. The background is softly blurred, showing a minimalist bookshelf and warm ambient lighting that aligns with the premium violet and white UI palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_6v8Q3UZMduD3kEcYjsesCHSi7-CbkVZEiaQo7-wvSMd7RfTD35LvcgQDm1kM47At3MIOZWn8yihiMll0AMHwyrJLRG2TPxDlqcr-U_DgqIoRH_QK6L1gXnNAxUNVRT5IJJwJ_KC5R1C3iUfQ8e-Q07Vidx8Z7Hse3lMq2txkCCmEL6v1M3nxAQC0Ecvd0_-bofVgzWDLRz4krGrljInzc_rxviPYgY7mhp8-vLmKG9ZM8LSSKC4wwuUxyUqZGXBbpaHqjh3UByw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 p-lg bg-surface">
+<div class="max-w-7xl mx-auto space-y-lg">
+<!-- Quick Insights / Bento Header -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-2 glass-card rounded-xl p-md flex items-center justify-between shadow-sm">
+<div>
+<p class="text-label-caps text-outline mb-xs">STATUS DA SEMANA</p>
+<h3 class="font-display-lg text-primary">12 Alertas</h3>
+<p class="text-body-md text-on-surface-variant">4 urgentes necessitam intervenção</p>
+</div>
+<div class="h-16 w-16 bg-error-container rounded-full flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-display-lg" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+<div class="glass-card rounded-xl p-md shadow-sm border-l-4 border-secondary">
+<p class="text-label-caps text-outline mb-xs">MÉDIA DE ENGAJAMENTO</p>
+<h3 class="text-headline-md text-secondary">84%</h3>
+<div class="mt-xs w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[84%]"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-md shadow-sm border-l-4 border-tertiary">
+<p class="text-label-caps text-outline mb-xs">AGENDADOS</p>
+<h3 class="text-headline-md text-tertiary">08 Alunos</h3>
+<p class="text-body-md text-on-surface-variant">Para hoje (24/10)</p>
+</div>
+</div>
+<!-- Filters Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md bg-white p-sm rounded-xl border border-outline-variant shadow-sm">
+<div class="flex flex-wrap items-center gap-sm">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded-lg text-body-md text-on-surface">
+<span class="material-symbols-outlined text-sm">filter_alt</span>
+<span class="font-semibold">Filtros:</span>
+</div>
+<select class="bg-white border-outline-variant rounded-lg text-body-md focus:ring-primary focus:border-primary px-4 py-2 cursor-pointer">
+<option>Todas as Turmas</option>
+<option>Engenharia 2024</option>
+<option>Direito 2023</option>
+<option>Design 2024</option>
+</select>
+<select class="bg-white border-outline-variant rounded-lg text-body-md focus:ring-primary focus:border-primary px-4 py-2 cursor-pointer">
+<option>Todos os Níveis de Alerta</option>
+<option>Urgente (Vermelho)</option>
+<option>Atenção (Amarelo)</option>
+<option>Estável (Verde)</option>
+</select>
+</div>
+<div class="flex gap-sm">
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-body-md font-semibold text-on-surface-variant hover:bg-surface-container transition-colors">
+                        Exportar Relatório
+                    </button>
+</div>
+</div>
+<!-- Central Triage Table (The "Control Room") -->
+<div class="bg-white rounded-xl shadow-sm border border-outline-variant overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-6 py-4 text-label-caps text-outline">Nome do Aluno</th>
+<th class="px-6 py-4 text-label-caps text-outline">Turma</th>
+<th class="px-6 py-4 text-label-caps text-outline">Última Atividade</th>
+<th class="px-6 py-4 text-label-caps text-outline">Status da Trilha</th>
+<th class="px-6 py-4 text-label-caps text-outline">Alerta (Flags)</th>
+<th class="px-6 py-4 text-label-caps text-outline">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1: High Alert -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-error-container text-error flex items-center justify-center font-bold">RA</div>
+<div>
+<p class="font-headline-md text-body-lg text-on-surface">Ricardo Almeida</p>
+<p class="text-body-md text-outline">ra.2024@uni.br</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">Engenharia A</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">Há 2 dias</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-24 bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-primary h-full w-[15%]"></div>
+</div>
+<span class="text-xs font-semibold text-primary">15%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-error-container text-error rounded-full text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">error</span>
+                                        Risco de Evasão
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<button class="p-2 text-primary hover:bg-primary-container/10 rounded-lg transition-colors" title="Ver Perfil">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-secondary hover:bg-secondary-container/20 rounded-lg transition-colors" title="Agendar Sessão">
+<span class="material-symbols-outlined">event_available</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Medium Alert -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Foto de Julia Mendes" class="h-10 w-10 rounded-full object-cover" data-alt="Close up portrait of a college student with curly hair smiling gently. The lighting is soft and natural, emphasizing a calm and hopeful atmosphere. The aesthetic matches the clean, minimalist modern UI with soft focus background elements that suggest an academic or library environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASnCzFqDH3pQ8Sh1U8rTDmXO-2UAj4IpXlYzrrbSGzaRvan3Ow0z9xmotvX1TC7gGenPunLXcRrS1Et7Rb15pWakLe8gsqsLkSfNpeKg9gIsgbLUAod_yxwg0Sq0D0kfqMxsQv51FPQUeVrfwrPFt8HR-8cG5ADWbLRD4opxOhu3tsFdqh-jvAGSptW09_C5kRa-3oJQp_K98rKsJ1jPUkVDmGYI8glYVvYNqrfh6K-r9auol3jLt56RFmxrblYctpCTEjqbvtnvU"/>
+<div>
+<p class="font-headline-md text-body-lg text-on-surface">Julia Mendes</p>
+<p class="text-body-md text-outline">j.mendes@uni.br</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">Design Visual B</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">Hoje, 09:45</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-24 bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-primary h-full w-[65%]"></div>
+</div>
+<span class="text-xs font-semibold text-primary">65%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-tertiary-fixed text-tertiary rounded-full text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">help_center</span>
+                                        Indecisão Grave
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<button class="p-2 text-primary hover:bg-primary-container/10 rounded-lg transition-colors" title="Ver Perfil">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-secondary hover:bg-secondary-container/20 rounded-lg transition-colors" title="Agendar Sessão">
+<span class="material-symbols-outlined">event_available</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Stable -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-secondary-fixed text-on-secondary-container flex items-center justify-center font-bold">FM</div>
+<div>
+<p class="font-headline-md text-body-lg text-on-surface">Felipe Moraes</p>
+<p class="text-body-md text-outline">felipe.mo@uni.br</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">Direito Noturno</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">Há 4 horas</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-24 bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-primary h-full w-[90%]"></div>
+</div>
+<span class="text-xs font-semibold text-primary">90%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                        Estável
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<button class="p-2 text-primary hover:bg-primary-container/10 rounded-lg transition-colors" title="Ver Perfil">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-secondary hover:bg-secondary-container/20 rounded-lg transition-colors" title="Agendar Sessão">
+<span class="material-symbols-outlined">event_available</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Alert -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Foto de Marcos Vinicius" class="h-10 w-10 rounded-full object-cover" data-alt="Portrait of a young male student wearing glasses, looking thoughtfully off-camera in a modern university library. The lighting is sophisticated and directional, creating a sense of focus. The color palette includes deep violets and soft neutrals, perfectly matching the high-end minimalist professional dashboard aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHuH4lRAexsd9ZgEIVqpI4x_yEDJVmDM8Dj452KM7IBITOyQ1Um7NGpdp5Gr1VaDB5MERX2mNum8bgOhdCz91r2zw6sjllSpz6fiTkpHBW9SntH8JACKKDNmFQnU2S9cDwk9qHsGAyUGb-zw205q9zu9UMq_75JGP-ij6DIMSKR9mZsft5ETbN-Y11TW_5RhupOo5L9vswRIOQs7WI3MRZOAr42z-2rC3KL96NtYT8ptk5wtyG6H5YCzLUStTH-CppKlsYruMTmk0"/>
+<div>
+<p class="font-headline-md text-body-lg text-on-surface">Marcos Vinicius</p>
+<p class="text-body-md text-outline">mv.silva@uni.br</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">Engenharia A</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">Há 1 semana</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-24 bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-primary h-full w-[05%]"></div>
+</div>
+<span class="text-xs font-semibold text-primary">05%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-error-container text-error rounded-full text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">history</span>
+                                        Inatividade Longa
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<button class="p-2 text-primary hover:bg-primary-container/10 rounded-lg transition-colors" title="Ver Perfil">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-secondary hover:bg-secondary-container/20 rounded-lg transition-colors" title="Agendar Sessão">
+<span class="material-symbols-outlined">event_available</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination/Footer of Table -->
+<div class="px-6 py-4 bg-surface-container-low flex items-center justify-between">
+<p class="text-body-md text-outline">Exibindo 4 de 128 alunos triados</p>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded hover:bg-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-outline-variant rounded bg-primary text-on-primary">
+                            1
+                        </button>
+<button class="p-2 border border-outline-variant rounded hover:bg-white transition-colors">
+                            2
+                        </button>
+<button class="p-2 border border-outline-variant rounded hover:bg-white transition-colors">
+                            3
+                        </button>
+<button class="p-2 border border-outline-variant rounded hover:bg-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Focus Tasks / Bottom Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-white rounded-xl p-md border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between mb-md">
+<h4 class="font-headline-md text-title-sm text-on-surface">Próximos Passos Sugeridos</h4>
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<ul class="space-y-sm">
+<li class="flex items-start gap-sm p-sm bg-surface-container-lowest rounded-lg border border-outline-variant">
+<div class="mt-1 h-6 w-6 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center">1</div>
+<div>
+<p class="font-semibold text-on-surface">Intervir com Ricardo Almeida</p>
+<p class="text-body-md text-on-surface-variant">Risco alto de abandono. Enviar mensagem via portal ou agendar conversa.</p>
+</div>
+</li>
+<li class="flex items-start gap-sm p-sm bg-surface-container-lowest rounded-lg border border-outline-variant">
+<div class="mt-1 h-6 w-6 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center">2</div>
+<div>
+<p class="font-semibold text-on-surface">Validar Trilha de Design B</p>
+<p class="text-body-md text-on-surface-variant">5 alunos sinalizaram indecisão no módulo de Mockups.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl p-md border border-outline-variant shadow-sm relative overflow-hidden group">
+<div class="flex items-center justify-between mb-md">
+<h4 class="font-headline-md text-title-sm text-on-surface">Histórico de Sessões</h4>
+<button class="text-primary text-body-md font-semibold hover:underline">Ver tudo</button>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-md">
+<div class="text-center w-12">
+<p class="text-xs font-bold text-outline">OUT</p>
+<p class="text-title-sm text-on-surface">23</p>
+</div>
+<div class="flex-1 border-l-2 border-primary-container pl-md py-1">
+<p class="font-semibold text-on-surface">Sessão Individual: Amanda Costa</p>
+<p class="text-xs text-on-surface-variant">Concluída • Feedback Positivo</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="text-center w-12">
+<p class="text-xs font-bold text-outline">OUT</p>
+<p class="text-title-sm text-on-surface">22</p>
+</div>
+<div class="flex-1 border-l-2 border-outline pl-md py-1">
+<p class="font-semibold text-on-surface">Dinâmica de Grupo: Turma Direito 2023</p>
+<p class="text-xs text-on-surface-variant">Pendente: Lançar notas da atividade</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

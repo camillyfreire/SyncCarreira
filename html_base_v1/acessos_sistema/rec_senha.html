@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recuperar Senha | Pathfinder SaaS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#4a4455",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdcc5",
+                        "surface-dim": "#e2d8d2",
+                        "surface-variant": "#eae1da",
+                        "tertiary-container": "#a05100",
+                        "surface-tint": "#732ee4",
+                        "primary": "#630ed4",
+                        "on-secondary-container": "#007165",
+                        "surface": "#fff8f5",
+                        "background": "#fff8f5",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#7c3aed",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#301400",
+                        "on-tertiary-container": "#ffdfcb",
+                        "secondary-container": "#62fae3",
+                        "secondary": "#006b5f",
+                        "on-primary-container": "#ede0ff",
+                        "inverse-surface": "#342f2b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "tertiary": "#7c3d00",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-background": "#1f1b17",
+                        "outline": "#7b7487",
+                        "surface-container": "#f6ece6",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#eaddff",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-secondary-fixed": "#00201c",
+                        "on-primary-fixed": "#25005a",
+                        "secondary-fixed": "#62fae3",
+                        "on-surface": "#1f1b17",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#ccc3d8",
+                        "inverse-on-surface": "#f9efe8",
+                        "surface-container-highest": "#eae1da",
+                        "surface-container-low": "#fcf2eb",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005047",
+                        "inverse-primary": "#d2bbff",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-container-high": "#f0e6e0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "xs": "4px",
+                        "lg": "32px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "container-margin": "20px",
+                        "md": "20px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tactile-button {
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+            transition: all 0.1s ease;
+        }
+        .tactile-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+        }
+        .soft-card-shadow {
+            box-shadow: 0 20px 25px -5px rgba(99, 14, 212, 0.05), 0 10px 10px -5px rgba(99, 14, 212, 0.02);
+        }
+    </style>
+</head>
+<body class="bg-[#FAF9F6] font-body-md text-on-surface min-h-screen flex flex-col">
+<!-- Header (Shared Component: TopAppBar) -->
+<header class="bg-[#FAF9F6] dark:bg-slate-950 font-plus-jakarta-sans antialiased fixed top-0 w-full z-50 border-b border-[#E6E4E0] dark:border-slate-800">
+<div class="flex justify-between items-center h-16 px-5 w-full max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 cursor-pointer active:opacity-70">
+                Pathfinder SaaS
+            </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 cursor-pointer hover:text-violet-600 transition-colors" data-icon="help_outline">help_outline</span>
+</div>
+</div>
+</header>
+<!-- Main Content (Canvas) -->
+<main class="flex-grow flex items-center justify-center px-container-margin py-xl mt-16">
+<div class="w-full max-w-[440px] animate-in fade-in slide-in-from-bottom-4 duration-700">
+<!-- Glassmorphism Style Card Container -->
+<div class="bg-white rounded-xl border border-[#E6E4E0] soft-card-shadow p-lg md:p-xl flex flex-col gap-lg">
+<!-- Branding / Icon Section -->
+<div class="flex flex-col items-center text-center gap-base">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center mb-base">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="key">key</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-background">Recuperar Senha</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[320px]">
+                        Não se preocupe, acontece com os melhores. Digite seu e-mail abaixo para receber as instruções.
+                    </p>
+</div>
+<!-- Recovery Form -->
+<form action="#" class="flex flex-col gap-md" onsubmit="return false;">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider ml-1" for="email">E-mail de Recuperação</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="mail">mail</span>
+</div>
+<input class="w-full h-[56px] pl-[52px] pr-md rounded-lg bg-surface-container-low border border-[#E6E4E0] focus:border-primary focus:ring-0 focus:bg-white transition-all font-body-md text-on-surface placeholder:text-outline" id="email" name="email" placeholder="exemplo@syncarreira.com" required="" type="email"/>
+</div>
+</div>
+<button class="tactile-button w-full h-[56px] bg-primary hover:bg-primary-container text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-base active:opacity-90" type="submit">
+<span>Enviar link de recuperação</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Link -->
+<div class="flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="chevron_left">chevron_left</span>
+<a class="font-body-md text-body-md text-primary font-semibold hover:underline transition-opacity duration-150" href="#">
+                        Voltar para o login
+                    </a>
+</div>
+</div>
+<!-- Motivational Quote / Visual Element -->
+<div class="mt-lg text-center">
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                    "O sucesso é a soma de pequenos esforços repetidos dia após dia."
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#FAF9F6] dark:bg-slate-950 w-full py-8 border-t border-[#E6E4E0] dark:border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-5 max-w-7xl mx-auto gap-4">
+<div class="text-sm font-plus-jakarta-sans text-slate-500">
+                © 2024 Pathfinder Career Systems. All rights reserved.
+            </div>
+<nav class="flex gap-lg">
+<a class="text-sm font-plus-jakarta-sans text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-opacity duration-150" href="#">Privacy Policy</a>
+<a class="text-sm font-plus-jakarta-sans text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-opacity duration-150" href="#">Terms of Service</a>
+<a class="text-sm font-plus-jakarta-sans text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-opacity duration-150" href="#">Support</a>
+</nav>
+</div>
+</footer>
+<!-- Visual Background Decoration -->
+<div class="fixed top-0 right-0 -z-10 opacity-20 pointer-events-none overflow-hidden h-screen w-screen">
+<div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-secondary-fixed/20 rounded-full blur-[100px]"></div>
+</div>
+</body></html>
