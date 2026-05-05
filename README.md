@@ -28,11 +28,11 @@ A solução otimiza o fluxo de trabalho das equipes de psicologia escolar por me
 * Controle rigoroso de perfis de acesso (RBAC - Role-Based Access Control) garantindo o isolamento de dados.
 
 ## 💻 Arquitetura e Requisitos Não Funcionais (RNFs)
-O projeto foi desenhado sob rigorosos padrões de mercado, garantindo performance e segurança (adequação à LGPD):
+O projeto foi desenhado sob padrões de mercado, garantindo performance e segurança (adequação à LGPD):
 * **Backend:** Arquitetura em camadas (Controller, Service, Repository, Entity) utilizando **Spring Boot**.
 * **Autenticação:** Segurança baseada em tokens JWT.
 * **Documentação de API:** Contratos de rotas documentados via Swagger/OpenAPI.
 * **Interface:** Design mobile-first voltado para usabilidade fluida e acessível.
 
-## Статус do Projeto
+## Staus do Projeto
 🚧 Em desenvolvimento 🚧
